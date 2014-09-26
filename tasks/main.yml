@@ -6,13 +6,6 @@
     update_cache: yes
   tags: [configuration, oracle-java, oracle-java-add-repository]
 
-- name: set (default version) version number
-  set_fact:
-    oracle_java_set_as_default_version: "{{ item.version }}"
-  with_items: oracle_java_versions
-  when: oracle_java_versions and item.set_as_default is defined and item.set_as_default
-  tags: [configuration, oracle-java, oracle-java-install]
-
 - name: configure debconf
   debconf:
     name: "oracle-java{{ item.version }}-installer"
@@ -33,22 +26,8 @@
 
 - name: set environment variables
   apt:
-    name: "oracle-java{{ oracle_java_set_as_default_version }}-set-default"
+    name: "oracle-java{{ item.version }}-set-default"
     state: latest
-  when: oracle_java_set_as_default_version is defined
+  with_items: oracle_java_versions
+  when: oracle_java_versions and item.set_as_default is defined and item.set_as_default
   tags: [configuration, oracle-java, oracle-java-set-environment]
-
-- name: get all alternatives to update
-  shell: "update-alternatives --get-selections | grep -i java-{{ oracle_java_set_as_default_version }}-oracle"
-  register: result
-  changed_when: false
-  when: oracle_java_set_as_default_version is defined
-  tags: [configuration, oracle-java, oracle-java-update-alternatives]
-
-- name: update alternatives
-  alternatives:
-    name: "{{ item.split()[0] }}"
-    path: "{{ item.split()[2] }}"
-  with_items: result.stdout_lines
-  when: oracle_java_set_as_default_version is defined
-  tags: [configuration, oracle-java, oracle-java-update-alternatives]
