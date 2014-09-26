@@ -1,0 +1,5 @@
+---
+# defaults file for oracle-java
+oracle_java_versions:
+  - version: 7
+    set_as_default: true
