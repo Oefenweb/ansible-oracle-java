@@ -9,7 +9,7 @@ Set up (the latest version of) oracle-java in Ubuntu systems.
 
 #### Variables
 
-* `oracle_java_versions` [default: [{version: 7, set_as_default: true}]]: Oracle java version(s) to install and whether or not to set as default
+* `oracle_java_versions` [default: `[{version: 7, set_as_default: true}]`]: Oracle java version(s) to install and whether or not to set as default
 
 ## Dependencies
 
