@@ -3,7 +3,7 @@
 - name: add repository from PPA and install its signing key
   apt_repository:
     repo: 'ppa:webupd8team/java'
-    update_cache: yes
+    update_cache: true
   tags: [configuration, oracle-java, oracle-java-add-repository]
 
 - name: configure debconf
@@ -13,7 +13,6 @@
     value: "true"
     vtype: "select"
   with_items: oracle_java_versions
-  when: oracle_java_versions
   tags: [configuration, oracle-java, oracle-java-install]
 
 - name: install
@@ -21,7 +20,6 @@
     name: "oracle-java{{ item.version }}-installer"
     state: latest
   with_items: oracle_java_versions
-  when: oracle_java_versions
   tags: [configuration, oracle-java, oracle-java-install]
 
 - name: set environment variables
@@ -29,5 +27,5 @@
     name: "oracle-java{{ item.version }}-set-default"
     state: latest
   with_items: oracle_java_versions
-  when: oracle_java_versions and item.set_as_default is defined and item.set_as_default
+  when: item.set_as_default is defined and item.set_as_default
   tags: [configuration, oracle-java, oracle-java-set-environment]
