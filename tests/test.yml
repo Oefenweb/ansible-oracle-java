@@ -1,6 +1,6 @@
----
 # test file for oracle-java
+---
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-oracle-java
+    - ../../
