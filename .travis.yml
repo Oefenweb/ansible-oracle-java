@@ -44,7 +44,7 @@ before_install:
   - sudo apt-get update -qq
 
   # Remove git
-  - sudo apt-get remove --purge oracle-java6-installer oracle-java7-installer oracle-java8-installer
+  - sudo apt-get remove --purge --yes oracle-java6-installer oracle-java7-installer oracle-java8-installer
 
 install:
   # Install Ansible.
