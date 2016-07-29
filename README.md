@@ -16,7 +16,7 @@ Set up any version of  oracle-java in Ubuntu systems.
 * `oracle_java_versions`
   [default: `[{version: 7, set_as_default: true,update_version}]`]: Oracle java  version(s) to install, whether or not to set as default and (optionally) the  java update version to use.
   
-  The java update version must be the version of webupd8team (see https://launchpad.net/~webupd8team/+archive/ubuntu/java for a list of all versions)
+  The java update version must be the version of webupd8team (see https://launchpad.net/~webupd8team/+archive/ubuntu/java for a list of all versions). If the variable is not used, the latest update version is installed
   
   
 
