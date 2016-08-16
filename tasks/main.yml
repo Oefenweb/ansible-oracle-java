@@ -4,7 +4,10 @@
   apt_repository:
     repo: 'ppa:webupd8team/java'
     update_cache: true
-  tags: [configuration, oracle-java, oracle-java-add-repository]
+  tags:
+    - configuration
+    - oracle-java
+    - oracle-java-add-repository
 
 - name: configure debconf
   debconf:
@@ -13,14 +16,20 @@
     value: "true"
     vtype: "select"
   with_items: "{{ oracle_java_versions }}"
-  tags: [configuration, oracle-java, oracle-java-install]
+  tags:
+    - configuration
+    - oracle-java
+    - oracle-java-install
 
 - name: install
   apt:
     name: "oracle-java{{ item.version }}-installer"
     state: latest
   with_items: "{{ oracle_java_versions }}"
-  tags: [configuration, oracle-java, oracle-java-install]
+  tags:
+    - configuration
+    - oracle-java
+    - oracle-java-install
 
 - name: set environment variables
   apt:
@@ -28,4 +37,7 @@
     state: latest
   with_items: "{{ oracle_java_versions }}"
   when: item.set_as_default is defined and item.set_as_default
-  tags: [configuration, oracle-java, oracle-java-set-environment]
+  tags:
+    - configuration
+    - oracle-java
+    - oracle-java-set-environment
