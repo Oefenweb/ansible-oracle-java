@@ -21,7 +21,7 @@
     - oracle-java
     - oracle-java-install
 
-- name: install
+- name: install (latest)
   apt:
     name: "oracle-java{{ item.version }}-installer"
     state: latest
@@ -32,7 +32,7 @@
     - oracle-java
     - oracle-java-install
 
-- name: install java update
+- name: install (update)
   apt:
     name: "oracle-java{{ item.version }}-installer={{ item.update_version}}"
     state: present
