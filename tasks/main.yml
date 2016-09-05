@@ -21,11 +21,23 @@
     - oracle-java
     - oracle-java-install
 
-- name: install
+- name: install (latest)
   apt:
     name: "oracle-java{{ item.version }}-installer"
     state: latest
   with_items: "{{ oracle_java_versions }}"
+  when: item.update_version is undefined
+  tags:
+    - configuration
+    - oracle-java
+    - oracle-java-install
+
+- name: install (update)
+  apt:
+    name: "oracle-java{{ item.version }}-installer={{ item.update_version}}"
+    state: present
+  with_items: "{{ oracle_java_versions }}"
+  when: item.update_version is defined
   tags:
     - configuration
     - oracle-java
