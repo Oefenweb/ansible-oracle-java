@@ -3,9 +3,3 @@
 oracle_java_versions:
   - version: 7
     set_as_default: true
-    # specify update version for java installer, if required
-    # if the variable is not specified, the latest version is used
-    # you can retrieve the versions from
-    # https://launchpad.net/~webupd8team/+archive/ubuntu/java
-    # example
-    # update=version: 8u101+8u101arm-1~webupd8~2
