@@ -1,6 +1,6 @@
 ## oracle-java
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-oracle-java.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-oracle-java) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-oracle--java-blue.svg)](https://galaxy.ansible.com/list#/roles/1854)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-oracle-java.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-oracle-java) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-oracle--java-blue.svg)](https://galaxy.ansible.com/tersmitten/oracle-java)
 
 Set up (the latest or a specific update version of) oracle-java in Ubuntu systems.
 
@@ -43,7 +43,7 @@ None
       - version: 7
       - version: 8
         set_as_default: true
-        update_version: '8u101+8u101arm-1~webupd8~2'
+        update_version: '8u111+8u111arm-1~webupd8~0'
 ```
 
 #### License

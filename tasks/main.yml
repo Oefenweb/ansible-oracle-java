@@ -24,7 +24,7 @@
 - name: install (latest)
   apt:
     name: "oracle-java{{ item.version }}-installer"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ oracle_java_versions }}"
   when: item.update_version is undefined
   tags:
@@ -46,7 +46,7 @@
 - name: set environment variables
   apt:
     name: "oracle-java{{ item.version }}-set-default"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ oracle_java_versions }}"
   when: item.set_as_default is defined and item.set_as_default
   tags:
