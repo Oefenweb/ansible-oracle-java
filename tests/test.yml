@@ -10,4 +10,3 @@
       - version: 7
       - version: 8
         set_as_default: true
-        update_version: '8u111+8u111arm-1~webupd8~0'
