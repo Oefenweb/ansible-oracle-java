@@ -7,6 +7,6 @@
     - ../../
   vars:
     oracle_java_versions:
+#      - version: 7
       - version: 8
-      - version: 9
         set_as_default: true

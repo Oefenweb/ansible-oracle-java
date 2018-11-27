@@ -1,6 +1,7 @@
 # meta file for oracle-java
 ---
 galaxy_info:
+  role_name: oracle-java
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up (the latest or a specific update version of) oracle-java in Ubuntu systems
@@ -12,6 +13,7 @@ galaxy_info:
         - precise
         - trusty
         - xenial
+        - bionic
   galaxy_tags:
     - system
     - development
