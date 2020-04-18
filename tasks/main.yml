@@ -34,7 +34,7 @@
 
 - name: install (update)
   apt:
-    name: "oracle-java{{ item.version }}-installer={{ item.update_version}}"
+    name: "oracle-java{{ item.version }}-installer={{ item.update_version }}"
     state: present
   with_items: "{{ oracle_java_versions }}"
   when: item.update_version is defined
