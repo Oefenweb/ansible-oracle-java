@@ -1,6 +1,7 @@
-# meta file for oracle-java
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: oracle-java
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
