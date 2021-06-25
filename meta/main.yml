@@ -2,7 +2,7 @@
 ---
 galaxy_info:
   namespace: oefenweb
-  role_name: oracle-java
+  role_name: oracle_java
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up (the latest or a specific update version of) oracle-java in Ubuntu systems

@@ -7,7 +7,7 @@
     - ../../
   vars:
     oracle_java_versions:
-#      - version: 7
+      # - version: 7
       - version: 8
         set_as_default: true
         update_version: '8u191-1~webupd8~1'
