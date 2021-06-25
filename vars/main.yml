@@ -1,2 +1,5 @@
 # vars file
 ---
+oracle_java_dependencies_pre:
+  - software-properties-common
+  - dirmngr

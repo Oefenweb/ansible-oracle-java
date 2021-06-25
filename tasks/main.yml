@@ -1,5 +1,16 @@
 # tasks file
 ---
+- name: install repository dependencies
+  apt:
+    name: "{{ oracle_java_dependencies_pre }}"
+    state: "{{ apt_install_state | default('latest') }}"
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+  tags:
+    - configuration
+    - oracle-java
+    - oracle-java-add-repository
+
 - name: add repository from PPA and install its signing key
   apt_repository:
     repo: 'ppa:webupd8team/java'
