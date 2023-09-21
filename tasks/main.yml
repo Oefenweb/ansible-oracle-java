@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install repository dependencies
-  apt:
+  ansible.builtin.apt:
     name: "{{ oracle_java_dependencies_pre }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -12,7 +12,7 @@
     - oracle-java-add-repository
 
 - name: add repository from PPA and install its signing key
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: 'ppa:webupd8team/java'
     update_cache: true
     mode: 0644
@@ -22,7 +22,7 @@
     - oracle-java-add-repository
 
 - name: configure debconf
-  debconf:
+  ansible.builtin.debconf:
     name: "oracle-java{{ item.version }}-installer"
     question: "shared/accepted-oracle-license-v1-1"
     value: "true"
@@ -34,7 +34,7 @@
     - oracle-java-install
 
 - name: install (latest)
-  apt:
+  ansible.builtin.apt:
     name: "oracle-java{{ item.version }}-installer"
     state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ oracle_java_versions }}"
@@ -45,7 +45,7 @@
     - oracle-java-install
 
 - name: install (update)
-  apt:
+  ansible.builtin.apt:
     name: "oracle-java{{ item.version }}-installer={{ item.update_version }}"
     state: present
   with_items: "{{ oracle_java_versions }}"
@@ -56,7 +56,7 @@
     - oracle-java-install
 
 - name: set environment variables
-  apt:
+  ansible.builtin.apt:
     name: "oracle-java{{ item.version }}-set-default"
     state: "{{ apt_install_state | default('latest') }}"
   with_items: "{{ oracle_java_versions }}"
