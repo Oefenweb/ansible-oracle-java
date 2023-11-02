@@ -30,7 +30,7 @@ None
 ---
 - hosts: all
   roles:
-    - oracle-java
+    - oefenweb.oracle-java
 ```
 
 ##### Advanced
@@ -39,7 +39,7 @@ None
 ---
 - hosts: all
   roles:
-    - oracle-java
+    - oefenweb.oracle-java
   vars:
     oracle_java_versions:
       - version: 7
