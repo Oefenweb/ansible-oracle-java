@@ -1,6 +1,6 @@
 ## oracle-java
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-oracle-java.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-oracle-java)
+[![CI](https://github.com/Oefenweb/ansible-oracle-java/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-oracle-java/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-oracle--java-blue.svg)](https://galaxy.ansible.com/Oefenweb/oracle_java)
 
 Set up (the latest or a specific update version of) oracle-java in Ubuntu systems.
