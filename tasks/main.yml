@@ -15,7 +15,7 @@
   ansible.builtin.apt_repository:
     repo: 'ppa:webupd8team/java'
     update_cache: true
-    mode: 0644
+    mode: '0644'
   tags:
     - configuration
     - oracle-java

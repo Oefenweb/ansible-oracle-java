@@ -1,6 +1,6 @@
 ## oracle-java
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-oracle-java.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-oracle-java)
+[![CI](https://github.com/Oefenweb/ansible-oracle-java/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-oracle-java/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-oracle--java-blue.svg)](https://galaxy.ansible.com/Oefenweb/oracle_java)
 
 Set up (the latest or a specific update version of) oracle-java in Ubuntu systems.
@@ -15,7 +15,7 @@ Set up (the latest or a specific update version of) oracle-java in Ubuntu system
 
 * `oracle_java_versions`: [default: `[{version: 7, set_as_default: true}]`]: Oracle java version(s) to install
 * `oracle_java_versions.{n}.version`: [required]: Version to install
-* `oracle_java_versions.{n}.set_as_default`: [optional]: Whether or not to set as default
+* `oracle_java_versions.{n}.set_as_default`: [optional]: Whether to set as default
 * `oracle_java_versions.{n}.update_version`: [optional]: A specific update version to use (e.g. `8u121-1~webupd8~0`). Must be a version of [webupd8team](https://launchpad.net/~webupd8team/+archive/ubuntu/java). If undefined, the latest (update) version is installed
 
 #### Dependencies
