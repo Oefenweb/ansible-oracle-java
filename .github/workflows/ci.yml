@@ -51,6 +51,7 @@ jobs:
           - distro: ubuntu1604
             ansible-version: '>=2.10, <2.11'
           - distro: ubuntu1804
+            ansible-version: '>=9, <10'
 
     steps:
       - name: Check out the codebase
